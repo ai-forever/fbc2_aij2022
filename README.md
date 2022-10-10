@@ -32,7 +32,7 @@ Baseline решение основано на модели [RUDOLPH](https://git
 
 Существует три версии модели RUDOLPH: 350M, 1.3B, 2.7B. В качестве базовой модели мы использовали модель RUDOLPH 2.7B, дообученную для решения шести открытых задач FBC2 ([RUDOLPH-2.7B-FBC2](https://huggingface.co/sberbank-ai/RUDOLPH-2.7B-FBC2)). Описание наборов данных, используемых для дообучения приведены ниже.
 
-Пример архива с решением размещен по ссылке [_sample\_submission.zip_](https://n-ws-f21jf.s3pd02.sbercloud.ru/b-ws-f21jf-ny6/FBC2/sample_submission.zip).
+Пример архива с решением размещен по ссылке [_sample\_submission.zip_](https://n-ws-f21jf.s3pd02.sbercloud.ru/b-ws-f21jf-ny6/FBC2/submission_350.zip).
 
 ### Структура данных
 

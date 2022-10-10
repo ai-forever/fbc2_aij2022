@@ -45,12 +45,12 @@ data:
 
 model:
   rudolph:
-    name: '2.7B'
+    name: '350M'
     fp16: true
     device: 'cuda'
     cache_dir: '/tmp/rudolph'
     pretrained: False
-  rudolph_weight: 'weights/rudolph-2_7b-v4/pytorch_model.bin'
+  rudolph_weight: 'weights/rudolph-350m-v6/pytorch_model.bin'
   vae:
     dwt: false
   freeze:
@@ -60,27 +60,27 @@ model:
     freeze_ff: false
     freeze_other: false
   params:
-    num_layers: 32
-    hidden_size: 2560
-    num_attention_heads: 32
+    num_layers: 24
+    hidden_size: 1024
+    num_attention_heads: 16
     embedding_dropout_prob: 0.1
     output_dropout_prob: 0.1
     attention_dropout_prob: 0.1
-    l_text_seq_length: 384
-    image_tokens_per_dim: 24
-    r_text_seq_length: 128
+    l_text_seq_length: 64
+    image_tokens_per_dim: 16
+    r_text_seq_length: 64
     kernel_size: 7
     last_kernel_size: 9
     cogview_sandwich_layernorm: true
     cogview_pb_relax: true
-    text_special_tokens: 1024
-    image_special_tokens: 1024
-    vocab_size: 16768
+    text_special_tokens: 384
+    image_special_tokens: 384
+    vocab_size: 16448
     image_vocab_size: 8192
     mlp_activation: "gelu_jit"
 
 trainer:
-  bs: 2
+  bs: 24
   task_weights:
     text_loss_weight: 0.5
     math_loss_weight: 0.5
@@ -120,7 +120,7 @@ trainer:
   checkpoints:
     filename: 'multi_rudolph_{epoch:02d}_{step:03d}'
     every_n_train_steps: 1000
-    dirpath: 'checkpoints_6tasks_rudolph-2_7b-v4/'
+    dirpath: 'checkpoints_6tasks_rudolph-350m-v6/'
     monitor: 'train_loss'
     mode: 'min'
     save_top_k: 10

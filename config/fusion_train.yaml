@@ -1,0 +1,136 @@
+tasks:
+  textqa: true
+  mathqa: true
+  vqa: true
+  captioning: true
+  generation: true
+  text_recognition: true
+data:
+  textqa:
+    dataset_path: '/home/jovyan/datasets/fb_train_2022/textqa/'
+    train_input: '/home/jovyan/datasets/fb_train_2022/textqa/text_small_train.json'
+    train_output: '/home/jovyan/datasets/fb_train_2022/textqa/text_small_train_answer.json'
+    val_input: '/home/jovyan/datasets/fb_train_2022/textqa/text_small_val.json'
+    val_output: '/home/jovyan/datasets/fb_train_2022/textqa/text_small_val_answer.json'
+  mathqa:
+    dataset_path: '/home/jovyan/datasets/fb_train_2022/mathqa/'
+    train_input: '/home/jovyan/datasets/fb_train_2022/mathqa/math_train.json'
+    train_output: '/home/jovyan/datasets/fb_train_2022/mathqa/math_train_answer.json'
+    val_input: '/home/jovyan/datasets/fb_train_2022/mathqa/math_val.json'
+    val_output: '/home/jovyan/datasets/fb_train_2022/mathqa/math_val_answer.json'
+  generation:
+    dataset_path: '/home/jovyan/datasets/fb_train_2022/generation/'
+    train_input: '/home/jovyan/datasets/fb_train_2022/generation/generation_train.json'
+    train_output: '/home/jovyan/datasets/fb_train_2022/generation/generation_train_answer.json'
+    val_input: '/home/jovyan/datasets/fb_train_2022/generation/generation_val.json'
+    val_output: '/home/jovyan/datasets/fb_train_2022/generation/generation_val_answer.json'
+  captioning:
+    dataset_path: '/home/jovyan/datasets/fb_train_2022/captioning/'
+    train_input: '/home/jovyan/datasets/fb_train_2022/captioning/captioning_train.json'
+    train_output: '/home/jovyan/datasets/fb_train_2022/captioning/captioning_train_answer.json'
+    val_input: '/home/jovyan/datasets/fb_train_2022/captioning/captioning_val.json'
+    val_output: '/home/jovyan/datasets/fb_train_2022/captioning/captioning_val_answer.json'
+  vqa:
+    dataset_path: '/home/jovyan/datasets/fb_train_2022/vqa/'
+    train_input: '/home/jovyan/datasets/fb_train_2022/vqa/vqa_train.json'
+    train_output: '/home/jovyan/datasets/fb_train_2022/vqa/vqa_train_answer.json'
+    val_input: '/home/jovyan/datasets/fb_train_2022/vqa/vqa_val.json'
+    val_output: '/home/jovyan/datasets/fb_train_2022/vqa/vqa_val_answer.json'
+  text_recognition:
+    dataset_path: '/home/jovyan/datasets/fb_train_2022/text_recognition/'
+    train_input: '/home/jovyan/datasets/fb_train_2022/text_recognition/text_recognition_train.json'
+    train_output: '/home/jovyan/datasets/fb_train_2022/text_recognition/text_recognition_train_answer.json'
+    val_input: '/home/jovyan/datasets/fb_train_2022/text_recognition/text_recognition_val.json'
+    val_output: '/home/jovyan/datasets/fb_train_2022/text_recognition/text_recognition_val_answer.json'
+
+model:
+  rudolph:
+    name: '2.7B'
+    fp16: true
+    device: 'cuda'
+    cache_dir: '/tmp/rudolph'
+    pretrained: False
+  rudolph_weight: 'weights/rudolph-2_7b-v4/pytorch_model.bin'
+  vae:
+    dwt: false
+  freeze:
+    freeze_emb: false
+    freeze_ln: false
+    freeze_attn: false
+    freeze_ff: false
+    freeze_other: false
+  params:
+    num_layers: 32
+    hidden_size: 2560
+    num_attention_heads: 32
+    embedding_dropout_prob: 0.1
+    output_dropout_prob: 0.1
+    attention_dropout_prob: 0.1
+    l_text_seq_length: 384
+    image_tokens_per_dim: 24
+    r_text_seq_length: 128
+    kernel_size: 7
+    last_kernel_size: 9
+    cogview_sandwich_layernorm: true
+    cogview_pb_relax: true
+    text_special_tokens: 1024
+    image_special_tokens: 1024
+    vocab_size: 16768
+    image_vocab_size: 8192
+    mlp_activation: "gelu_jit"
+
+trainer:
+  bs: 2
+  task_weights:
+    text_loss_weight: 0.5
+    math_loss_weight: 0.5
+    gener_loss_weight: 0.5
+    capt_loss_weight: 0.5
+    vqa_loss_weight: 0.5
+    text_recog_loss_weight: 0.5
+    text:
+        lt_loss_weight: 1
+        img_loss_weight: 0.01
+        rt_loss_weight: 7
+    math:
+        lt_loss_weight: 1
+        img_loss_weight: 0.01
+        rt_loss_weight: 7
+    gener:
+        lt_loss_weight: 1
+        img_loss_weight: 7
+        rt_loss_weight: 0.01
+    capt:
+        lt_loss_weight: 1
+        img_loss_weight: 1
+        rt_loss_weight: 7
+    vqa:
+        lt_loss_weight: 1
+        img_loss_weight: 1
+        rt_loss_weight: 7
+    text_recog:
+        lt_loss_weight: 1
+        img_loss_weight: 1
+        rt_loss_weight: 7
+        
+  scheduler:
+    max_lr: 2e-5
+  logger:
+    model_name: 'multi'
+  checkpoints:
+    filename: 'multi_rudolph_{epoch:02d}_{step:03d}'
+    every_n_train_steps: 1000
+    dirpath: 'checkpoints_6tasks_rudolph-2_7b-v4/'
+    monitor: 'train_loss'
+    mode: 'min'
+    save_top_k: 10
+    save_last: True
+  pl_trainer:
+    gpus: 2
+    strategy: 'ddp'
+    replace_sampler_ddp: True
+    max_epochs: 2
+    gradient_clip_val: 1.0
+    enable_progress_bar: True
+#     accumulate_grad_batches: 1
+    val_check_interval: 0.25

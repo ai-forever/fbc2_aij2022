@@ -1,0 +1,4 @@
+wordtodigits
+ruwordnet
+pymorphy2
+razdel

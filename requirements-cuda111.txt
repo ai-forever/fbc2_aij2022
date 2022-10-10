@@ -1,0 +1,11 @@
+rudalle
+catalyst
+bitsandbytes
+pandas
+wandb
+scikit-image==0.14.2
+ruclip
+rouge
+razdel
+wordnet
+pymorphy2

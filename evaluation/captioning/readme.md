@@ -1,0 +1,1 @@
+python evaluate_ruclip_meteor.py --ref_path data/true_caption.json --pred_path data/pred_caption.json --gt_image_path data/input_caption.json

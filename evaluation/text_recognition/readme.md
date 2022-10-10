@@ -1,0 +1,1 @@
+evaluate_text_ned.py --ref_path data/true_text_recognition.json --pred_path data/pred_text_recognition.json

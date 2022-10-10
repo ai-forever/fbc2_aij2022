@@ -34,7 +34,7 @@ Baseline is built using the [RUDOLPH](https://github.com/ai-forever/ru-dolph) mo
 
 There are three versions of the RUDOLPH model: 350M, 1.3B, 2.7B. In the baseline, we used RUDOLPH 2.7B fine-tuned for 6 open tasks from FBC2 ([RUDOLPH-2.7B-FBC2](https://huggingface.co/sberbank-ai/RUDOLPH-2.7B-FBC2)). The description of training data for each open task is given below.
 
-The code for baseline can be downloaded by [_sample\_submission.zip_](https://n-ws-f21jf.s3pd02.sbercloud.ru/b-ws-f21jf-ny6/FBC2/sample_submission.zip) link.
+The code for baseline can be downloaded by [_sample\_submission.zip_](https://n-ws-f21jf.s3pd02.sbercloud.ru/b-ws-f21jf-ny6/FBC2/sample_submission_1_3b.zip) link.
 
 ### Data structure
 

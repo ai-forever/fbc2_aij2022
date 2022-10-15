@@ -91,7 +91,7 @@ For the VisualQA task, we use such metrics as **METEOR**. METEOR shall be calcul
 1. It is taken into account, in which proportion the predicted numerical result differs from the real one. With this end in view, the smallest number shall be selected from a couple of predicted and reference results and divided by the biggest one. Therefore, if the numbers match, the metric for this pair equals to 1; otherwise, the metric shall be calculated proportionally.
 2. Numerals shall be translated from the text format to the numeric one: "three" - 3.
 
-![image](https://latex.codecogs.com/svg.image?S_{VisualQA}&space;=&space;1/2&space;\cdot&space;(METEOR&plus;CLIP_{score}).)
+![image](https://latex.codecogs.com/svg.image?S_{VisualQA}&space;=&space;METEOR.)
 
 ## Sub-task 6 – Text Recognition in the Wild
 

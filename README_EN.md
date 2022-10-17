@@ -342,7 +342,7 @@ A task to recognize texts in urban or other similar environment (sign boards, ro
 
 **Train** 
 
-There is a novel dataset START (**S**yn**T**hesized and **A**nnotated dataset for **T**ext **R**ecognition) consisting of the synthetic and real-world human-annotated data with text in Russian. Synthetic data includes 140 000 images taken from the open dataset [COCO](https://cocodataset.org). The images are supplemented with some text (the text is situated in various parts of the images, turned at various angles, has various colors and transparency, etc.). Real-world data consists of 40 312 urban photos with various text labels both in Russian (mainly) and English. The model shall be trained to recognize a text in the image.
+There is a novel dataset START (**S**yn**T**hesized and **A**nnotated dataset for **T**ext **R**ecognition) consisting of the synthetic and real-world human-annotated data with text in Russian. Synthetic data includes 140 000 images taken from the open dataset [COCO](https://cocodataset.org). The images are supplemented with some text (the text is situated in various parts of the images, turned at various angles, has various colors and transparency, etc.). Real-world data consists of 40 312 urban photos with various text labels both in Russian (mainly) and English. Also, as additional data, you can use [dataset from SberIDP](https://n-ws-f21jf.s3pd02.sbercloud.ru/b-ws-f21jf-ny6/FBC2/titw_sberidp.zip), which contains 17,000 images with text on a monochrome background. The model shall be trained to recognize a text in the image.
 
 ### TRitW test data format
 

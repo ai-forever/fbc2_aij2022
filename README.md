@@ -5,7 +5,7 @@
 **19.10**
 
 Добавлены материалы докладов с вебинара 19.10.22 по следующим темам:
-* FusionBrain подход, FBC2 baseline, RuDolph;
+* [FusionBrain подход, FBC2 baseline, RUDOLPH](https://github.com/ai-forever/fbc2_aij2022/blob/main/webinar_1/fbc2_19_10_22_part1_with_intro.pdf);
 * обзор мультимодальных архитектур;
 * [технические детали, загрузка submissions](https://github.com/ai-forever/fbc2_aij2022/blob/main/webinar_1/fbc2%2019.10.22%20part2.pdf). 
 

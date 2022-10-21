@@ -8,6 +8,7 @@
 * [FusionBrain подход, FBC2 baseline, RUDOLPH](https://github.com/ai-forever/fbc2_aij2022/blob/main/webinar_1/fbc2_19_10_22_part1_with_intro.pdf);
 * [обзор мультимодальных архитектур](https://github.com/ai-forever/fbc2_aij2022/blob/main/webinar_1/fbc2_19_10_22_SOTA_survey.pdf);
 * [технические детали, сборка и загрузка submission](https://github.com/ai-forever/fbc2_aij2022/blob/main/webinar_1/fbc2%2019.10.22%20part2.pdf). 
+* [специальная номинация <<Самое экологичное решение>>](https://github.com/ai-forever/fbc2_aij2022/blob/main/webinar_1/eco2ai_special.pdf)
 
 ## Общее описание задачи
 

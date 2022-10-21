@@ -8,7 +8,8 @@
 Slides from the first webinar (19.10.22) are uploaded:
 * [FusionBrain approach, FBC2 baseline, RUDOLPH](https://github.com/ai-forever/fbc2_aij2022/blob/main/webinar_1/fbc2_19_10_22_part1_with_intro.pdf);
 * [SOTA multimodal architectures survey](https://github.com/ai-forever/fbc2_aij2022/blob/main/webinar_1/fbc2_19_10_22_SOTA_survey.pdf);
-* [technical details, submission process](https://github.com/ai-forever/fbc2_aij2022/blob/main/webinar_1/fbc2%2019.10.22%20part2.pdf). 
+* [technical details, submission process](https://github.com/ai-forever/fbc2_aij2022/blob/main/webinar_1/fbc2%2019.10.22%20part2.pdf);
+* [special category ''The Most Sustainable Solution''](https://github.com/ai-forever/fbc2_aij2022/blob/main/webinar_1/eco2ai_special.pdf)
 
 ## General task description
 

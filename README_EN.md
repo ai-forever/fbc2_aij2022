@@ -5,7 +5,7 @@
 
 **30.10**
 
-Video with key concepts of Docker images building is uploaded: [ссылка](https://youtu.be/1U4oHI-oCtc).
+Video with key concepts of Docker images building is uploaded: [link](https://youtu.be/1U4oHI-oCtc).
 
 **27.10**
 

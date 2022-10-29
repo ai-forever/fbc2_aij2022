@@ -3,6 +3,10 @@
 
 ## Updates
 
+**30.10**
+
+Video with key concepts of Docker images building is uploaded: [ссылка](https://youtu.be/1U4oHI-oCtc).
+
 **27.10**
 
 Video recording of the webinar (19.10.22) is uploaded: [link](https://vk.com/video/@sber?z=video-22522055_456242309%2Fclub22522055%2Fpl_-22522055_-2).
